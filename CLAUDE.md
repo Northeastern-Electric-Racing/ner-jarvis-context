@@ -1,42 +1,29 @@
 # NER onboarding workspace
 
-This folder is your **Northeastern Electric Racing (NER) software onboarding
-workspace** — a home base for your Claude Code session while you get set up. It is
-intentionally almost empty: the real knowledge lives in the **NER skills** that
-`ner-jarvis` installed into your Claude Code, and those resolve people, repos, and
-docs **live**, so nothing checked in here can go stale.
+Home base for a new Northeastern Electric Racing (NER) software member. This repo is
+intentionally near-empty — the real knowledge lives in the installed **NER skills**,
+which resolve people, repos, and docs live, so nothing checked in here can go stale.
 
-## For Claude
+## Rules
 
-When working on NER software — onboarding, dev-environment setup, understanding a
-repo or its code, NER conventions/docs, or figuring out who owns what and how to
-escalate — reach for the installed NER skills rather than answering from memory, and
-resolve people/ownership **live** rather than assuming. Use the `gh` CLI for GitHub.
+- For anything NER — onboarding, dev-environment setup, understanding a repo or its
+  code, conventions/docs, who owns what, how to escalate — reach for the NER skills
+  rather than answering from memory, and resolve people/ownership **live**.
+- Use the `gh` CLI for GitHub.
+- NER's Confluence is mid-restructure. When a page reads as current but acting on it
+  would be wrong, record it with **ner-flag-stale**. A doc describing how something
+  was built before is history, not a problem — leave it be.
 
-## For you
+## Resolving ownership
 
-Open Claude Code here and try things like:
+Sources answer different questions. Do not mix them up:
 
-> "Help me get started on the NER software team."
-> "Walk me through setting up my dev environment."
-> "What does <repo> do, and who owns it?"
+- `roster.json` is **structure** — who nominally holds a role. It is a dated
+  snapshot (`asOf`), authoritative for org taxonomy, not for who is active today.
+- GitHub is **activity** — who actually commits and reviews. Activity is not a
+  title, and a title is not activity.
 
-`ner-jarvis doctor` checks that your skills and data sources are healthy.
-
-## When a doc is wrong
-
-NER's Confluence is mid-restructure, so you will hit pages that read as current and
-aren't. That is worth capturing, not working around — say so, and Claude will record
-it with the **ner-flag-stale** skill.
-
-Reports stay **on your machine** (`~/.claude/ner-jarvis/stale.jsonl`). Nothing is
-sent anywhere. When you're ready to share:
-
-```bash
-ner-jarvis stale list       # what you've recorded
-ner-jarvis stale export     # paste-ready markdown for the team channel
-```
-
-A page counts as stale when someone could mistake it for current *and* acting on it
-would be wrong. A doc describing how something was built before is history, not a
-problem — leave it be.
+Never state a commit, review, or recency claim you have not counted. Run the query
+and cite the number; "X is the main contributor" without a count is a guess. If
+structure and activity disagree, report **both with their dates** rather than
+picking one — the disagreement is usually the real answer.
